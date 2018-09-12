@@ -9,6 +9,8 @@ const Subreddit = ({subreddits}) => (
       <Post
         key={i}
         title={post.title}
+        date={post.created}
+        summary={post.selftext_html}
       />
     )}
   </div>
