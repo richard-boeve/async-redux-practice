@@ -10,7 +10,7 @@ const Subreddit = ({subreddits}) => (
         key={i}
         title={post.title}
         date={post.created}
-        summary={post.selftext_html}
+        summary={post.selftext}
       />
     )}
   </div>
