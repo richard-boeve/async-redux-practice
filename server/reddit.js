@@ -17,4 +17,16 @@ router.get('/subreddit/:subreddit', (req, res) => {
     })
 })
 
+router.get('/synonym/:word', (req, res) => {
+  request
+    .get(`https://api.datamuse.com/words?rel_trg=${req.params.word}`)
+    .end((err, result) => {
+      if (err) {
+        res.status(500).send(err.message)
+      } else {
+        res.json(result.body.data.children)
+      }
+    })
+})
+
 module.exports = router
